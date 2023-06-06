@@ -1,0 +1,13 @@
+<button class="save-btn" (click)="popup = !popup" type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+  Save
+</button>
+
+<ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="popup"
+[cdkConnectedOverlayHasBackdrop]="true" (backdropClick)="handleBackdropClick()">
+<div class="save-popup">
+  Please update your profile information.
+  <div class="btn">
+    <button (click)="closePopover()">OK</button>
+  </div>
+</div>
+</ng-template>
